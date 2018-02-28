@@ -5,3 +5,4 @@ android/gradlew
 android/gradlew.bat
 android/local.properties
 demo
+.DS_Store

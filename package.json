@@ -1,0 +1,29 @@
+{
+  "name": "react-native-plugin-zhugeio",
+  "version": "1.0.0",
+  "description": "React-native Plugin For Zhugeio Mobile Analysis",
+  "main": "index.js",
+  "author": {
+    "name": "Jiaokang",
+    "email": "jiaokang@zhugeio.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "ecosystem:react-native",
+    "react-native",
+    "zhugeio",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zhugesdk/react-native-plugin-zhugeio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zhugesdk/react-native-plugin-zhugeio/issues"
+  },
+  "homepage": "https://github.com/zhugesdk/react-native-plugin-zhugeio",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

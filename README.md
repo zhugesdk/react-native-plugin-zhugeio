@@ -1,7 +1,7 @@
 # react-native-zhugeio
 诸葛移动统计的react-native插件
 
-### 环境需求
+### 1. 环境需求
 * iOS 8.0
 
    部分代码运行于8.0的系统
@@ -17,7 +17,7 @@
   
   iOS系统的集成依赖于cocoaPod工具
 
-### 集成方法
+### 2. 集成方法
 
 在你的React-native项目目录下
 
@@ -28,7 +28,7 @@
 
   ```
 
-#### iOS
+#### 2.1 iOS
 
 * 若在你的react-native项目的ios文件夹下，没有Podfile文件，那么初始化Pod
 
@@ -43,9 +43,10 @@
     ```
     platform :ios, '8.0'
 
-    target 'yourAppTarget' do
-      pod 'React', path: '../node_modules/react-native'
-      pod 'react-native-plugin-zhugeio', path: '../node_modules/react-native-plugin-zhugeio'
+    target 'yourApp' do
+        pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+        pod 'React', path: '../node_modules/react-native',:subspecs => ['DevSupport']
+        pod 'react-native-plugin-zhugeio', path: '../node_modules/react-native-plugin-zhugeio'
     end
 
     ```
@@ -67,31 +68,36 @@
 
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         //设置上传地址，一般用户无需更改
-        [[Zhuge sharedInstance] setUploadURL:"https://www.zhugeio.com" andBackupUrl:nil];
+        [[Zhuge sharedInstance] setUploadURL:@"https://www.zhugeio.com" andBackupUrl:nil];
         [[Zhuge sharedInstance] startWithAppKey:@"Your App Key" launchOptions:launchOptions];
     }
 ```
 
-#### Android
+#### 2.2 Android
 
 
-* 找到 ```android/youApp/src/main/java.../MainApplication.java``` 文件
+* 检查```android/setting.gradle```配置有没有包含以下内容：
+
+  ```
+     include ':react-native-plugin-zhugeio'
+     project(':react-native-plugin-zhugeio').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-plugin-zhugeio/android')
+
+  ```
+
+* 检查```android/app/build.gradle```dependencies是否包含如下内容
+
+  ```
+    compile project(':react-native-plugin-zhugeio')
+
+  ```
+
+* 找到 ```android/youApp/src/main/java.../MainApplication.java``` 文件，添加如下代码
 
   ```
     import com.zhuge.analysis.stat.ZhugeSDK;// <--导入SDK
     import com.zhuge.reactnativezhuge.RNZhugeioPackage;//<--导入react-native接口
 
     public class MainApplication extends Application implements ReactApplication {
-
-        private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-
-          @Override
-          protected List<ReactPackage> getPackages() {
-            return Arrays.<ReactPackage>asList(
-               new MainReactPackage(),new RNZhugeioPackage() //<--注册Zhugeio
-            );
-          }
-        };
         @Override
         public void onCreate(){
            Super.onCreate();
@@ -101,6 +107,18 @@
            ...
    
         }
+
+        private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+
+          @Override
+          protected List<ReactPackage> getPackages() {
+            return Arrays.<ReactPackage>asList(
+               new MainReactPackage(),
+               //注册Zhugeio
+               new RNZhugeioPackage()
+            );
+          }
+        };
     }
 
     ```
@@ -121,7 +139,7 @@
 
     ```
 
-### 使用说明
+### 3. 使用说明
 
 * 导入Zhugeio
 
@@ -136,13 +154,6 @@
 	Zhugeio.track('事件名称',{'属性1':'值1','属性2':'值2'});
 	
 	```
-	
-	也可不带属性
-	
-	```
-	Zhugeio.track('事件名称');
-	```
-
 * 自定义时长事件 
 
     使用```startTrack()```开始事件

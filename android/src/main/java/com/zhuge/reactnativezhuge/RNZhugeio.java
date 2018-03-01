@@ -27,8 +27,8 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void init(){
-        ZhugeSDK.getInstance().init(getReactApplicationContext());
+    public void init(String appkey,String channel){
+        ZhugeSDK.getInstance().init(getReactApplicationContext(),appkey,channel);
     }
 
     @ReactMethod
@@ -48,6 +48,7 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void identify(String uid , ReadableMap pro){
+        debug("identify "+uid);
         HashMap<String, Object> properties = null;
         if (pro != null){
             properties = pro.toHashMap();
@@ -57,6 +58,7 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void track(String name, ReadableMap pro){
+        debug("track "+name);
         HashMap<String, Object> properties = null;
         if (pro != null){
             properties = pro.toHashMap();
@@ -66,11 +68,13 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void startTrack(String name){
+        debug("startTrack "+name);
         ZhugeSDK.getInstance().startTrack(name);
     }
 
     @ReactMethod
     public void endTrack(String name, ReadableMap pro){
+        debug("endTrack : "+name);
         JSONObject properties = null;
         if (pro != null){
             HashMap<String, Object> map = pro.toHashMap();
@@ -88,12 +92,13 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
     }
 
     @Override
-    public void initialize() {
-        super.initialize();
-    }
-
-    @Override
     public String getName() {
         return "Zhugeio";
+    }
+
+    private void debug(String info){
+        if (BuildConfig.DEBUG){
+            Log.d(TAG,info);
+        }
     }
 }

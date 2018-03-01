@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/zhugesdk/react-native-plugin-zhugeio"
   s.license      = "Apache-2.0"
-  s.author             = { "jiaokang" => "jiaokang@zhugeio.com" }
+  s.author       = { "jiaokang" => "jiaokang@zhugeio.com" }
 
   s.platform     = :ios, "8.0"
 

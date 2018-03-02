@@ -52,6 +52,8 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
         HashMap<String, Object> properties = null;
         if (pro != null){
             properties = pro.toHashMap();
+        }else{
+            properties = new HashMap<>();
         }
         ZhugeSDK.getInstance().identify(null,uid,properties);
     }
@@ -62,6 +64,8 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
         HashMap<String, Object> properties = null;
         if (pro != null){
             properties = pro.toHashMap();
+        }else{
+            properties = new HashMap<>();
         }
         ZhugeSDK.getInstance().track(null,name,properties);
     }

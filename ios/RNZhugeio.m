@@ -35,6 +35,12 @@ RCT_EXPORT_METHOD(track:(NSString *)name properties:(NSDictionary *)pro)
     [zhuge track:name properties:pro];
 }
 
+RCT_EXPORT_METHOD(setUtm:(NSDictionary *)utm){
+    Zhuge *zhuge = [Zhuge sharedInstance];
+    NSLog(@"setUtm with %@",utm);
+    [zhuge setUtm:utm];
+}
+
 RCT_EXPORT_METHOD(startTrack:(NSString *)name){
     NSLog(@"startTrack with %@",name);
     [[Zhuge sharedInstance]startTrack:name];

@@ -95,6 +95,23 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
         ZhugeSDK.getInstance().endTrack(name,properties);
     }
 
+    @ReactMethod
+    public void setUtm(ReadableMap utm){
+        JSONObject info = new JSONObject();
+        if (utm != null){
+            HashMap<String, Object> map = utm.toHashMap();
+            Set<String> keySet = map.keySet();
+            try {
+                for (String key : keySet){
+                    info.put(key,map.get(key));
+                }
+            }catch (Exception e){
+                Log.e(TAG,"convert map to json error",e);
+            }
+        }
+        ZhugeSDK.getInstance().setUtm(info);
+    }
+
     @Override
     public String getName() {
         return "Zhugeio";

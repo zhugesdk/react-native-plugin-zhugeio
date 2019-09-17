@@ -71,6 +71,18 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void trackRevenue(ReadableMap pro){
+        debug("track revenue");
+        HashMap<String, Object> properties = null;
+        if (pro != null){
+            properties = pro.toHashMap();
+        }else{
+            properties = new HashMap<>();
+        }
+        ZhugeSDK.getInstance().trackRevenue(null,properties);
+    }
+
+    @ReactMethod
     public void startTrack(String name){
         debug("startTrack "+name);
         ZhugeSDK.getInstance().startTrack(name);

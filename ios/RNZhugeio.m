@@ -28,6 +28,12 @@ RCT_EXPORT_METHOD(identify:(NSString *)uid properties:(NSDictionary *)pro){
     [[Zhuge sharedInstance]identify:uid properties:pro];
 }
 
+RCT_EXPORT_METHOD(properties:(NSDictionary *)pro){
+    NSLog(@"itrack with revenue");
+    [[Zhuge sharedInstance] trankRevenueWithProperties:pro];
+}
+
+
 RCT_EXPORT_METHOD(track:(NSString *)name properties:(NSDictionary *)pro)
 {
     Zhuge *zhuge = [Zhuge sharedInstance];

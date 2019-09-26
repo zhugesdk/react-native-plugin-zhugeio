@@ -30,7 +30,7 @@ RCT_EXPORT_METHOD(identify:(NSString *)uid properties:(NSDictionary *)pro){
 
 RCT_EXPORT_METHOD(properties:(NSDictionary *)pro){
     NSLog(@"itrack with revenue");
-    [[Zhuge sharedInstance] trankRevenueWithProperties:pro];
+    [[Zhuge sharedInstance] trackRevenue:pro];
 }
 
 

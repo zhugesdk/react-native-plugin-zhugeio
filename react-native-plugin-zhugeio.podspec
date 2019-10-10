@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.source_files  = "ios/*"
   s.requires_arc = true
 
-  s.dependency "Zhugeio", "~> 3.1"
+  s.dependency "Zhugeio", "~> 3.2"
   s.dependency "React"
 end

@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 
   s.name         = "react-native-plugin-zhugeio"
-  s.version      = "1.1.3"
+  s.version      = "1.1.4"
   s.summary      = "React Native modules of zhugeio using Zhugeio pod."
 
   s.homepage     = "https://github.com/zhugesdk/react-native-plugin-zhugeio"
   s.license      = "Apache-2.0"
-  s.author       = { "jiaokang" => "jiaokang@zhugeio.com" }
+  s.author       = { "Zhugeio" => "sunxiaosong@zhugeio.com" }
 
   s.platform     = :ios, "8.0"
 
@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.source_files  = "ios/*"
   s.requires_arc = true
 
-  s.dependency "Zhugeio", "~> 3.2"
+  s.dependency "ZhugeioAnalytics"
   s.dependency "React"
 end

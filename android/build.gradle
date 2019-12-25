@@ -18,5 +18,5 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile "com.zhuge.analysis:zhugeio:latest.integration"
+    compile "com.ZhugeioAnalytic:zhugeio:latest.integration"
 }

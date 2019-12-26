@@ -22,6 +22,10 @@
 在你的React-native项目目录下
 
   ```
+  yarn add react-native-plugin-zhugeio
+  ```
+  或
+  ```
     $ npm install  react-native-plugin-zhugeio --save
 
     $ react-native link
@@ -55,7 +59,7 @@
 * 在```ios/youProjectName/AppDelegate.m```文件中，找到```application didFinishLaunchingWithOptions ```方法，在其中加入如下代码
 
 ```
-    #import <Zhugeio/Zhuge.h>
+    #import <ZhugeioAnalytics/Zhuge.h>
 
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         [[Zhuge sharedInstance] startWithAppKey:@"Your App Key" launchOptions:launchOptions];
@@ -64,7 +68,7 @@
 * 若是私有部署的用户，需要更改数据上传地址，那么请将上述代码更改为：
 
 ```
-    #import <Zhugeio/Zhuge.h>
+    #import <ZhugeioAnalytics/Zhuge.h>
 
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         //设置上传地址，一般用户无需更改
@@ -87,7 +91,7 @@
 * 检查```android/app/build.gradle```dependencies是否包含如下内容
 
   ```
-    compile project(':react-native-plugin-zhugeio')
+    implementation project(':react-native-plugin-zhugeio')
 
   ```
 

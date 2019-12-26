@@ -1,5 +1,5 @@
 #import "RNZhugeio.h"
-#import <Zhugeio/Zhuge.h>
+#import <ZhugeioAnalytics/Zhuge.h>
 
 @implementation RNZhugeio
 

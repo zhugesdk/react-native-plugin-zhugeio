@@ -1,17 +1,18 @@
 package com.zhuge.reactnativezhuge;
 
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class RNZhugeioPackage implements ReactPackage {
 
-    public static final String VERSION = "1.1.7";
+    public static final String VERSION = "1.1.8";
 
 
     @Override

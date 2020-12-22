@@ -1,12 +1,19 @@
-apply plugin: 'com.android.library'
+aapply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    try{
+        compileSdkVersion rootProject.compileSdkVersion
+    }catch(Exception e){
+        compileSdkVersion 30
+    }
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 22
+        try{
+            targetSdkVersion rootProject.targetSdkVersion
+        }catch(Exception e){
+            targetSdkVersion 30
+        }
         versionCode 1
         versionName "1.0"
     }
@@ -17,6 +24,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
-    compile "com.ZhugeioAnalytic:zhugeio:latest.integration"
+    implementation 'com.facebook.react:react-native:+'
+    implementation "com.ZhugeioAnalytic:zhugeio:latest.integration"
 }

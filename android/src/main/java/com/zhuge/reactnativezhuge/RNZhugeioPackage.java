@@ -10,9 +10,21 @@ import java.util.Collections;
 import java.util.List;
 
 public class RNZhugeioPackage implements ReactPackage {
+
+    public static final String VERSION = "1.1.6";
+
+
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.asList(new NativeModule[]{new RNZhugeio(reactContext)});
+
+        List<NativeModule> modules = new ArrayList<>();
+    
+        modules.add(new RNZhugeio(reactContext));
+        return modules;
+    }
+
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+        return Collections.emptyList();
     }
 
     @Override

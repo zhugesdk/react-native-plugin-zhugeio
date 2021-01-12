@@ -18,7 +18,7 @@
 
 #pragma mark - Constants
 NSString *const kZAEventScreenNameProperty = @"$screen_name";
-NSString *const kZAEventTitleProperty = @"$title";
+NSString *const kZAEventTitleProperty = @"$page_title";
 NSString *const kZAEventElementContentProperty = @"$element_content";
 
 

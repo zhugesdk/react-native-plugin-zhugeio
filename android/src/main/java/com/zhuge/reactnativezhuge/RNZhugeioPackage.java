@@ -18,9 +18,10 @@ public class RNZhugeioPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
 
-        List<NativeModule> modules = new ArrayList<>();
+        List<NativeModule> modules = new ArrayList<>(2);
     
         modules.add(new RNZhugeio(reactContext));
+        modules.add(new RNZhugeioModule(reactContext));
         return modules;
     }
 

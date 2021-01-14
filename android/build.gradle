@@ -24,6 +24,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.facebook.react:react-native:+'
-    implementation "com.ZhugeioAnalytic:zhugeio:latest.integration"
+    compileOnly  'com.facebook.react:react-native:+'
+    compileOnly  project(':zhugeioanalytics')
 }

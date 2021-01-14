@@ -25,5 +25,7 @@ repositories {
 
 dependencies {
     compileOnly  'com.facebook.react:react-native:+'
-    compileOnly  project(':zhugeioanalytics')
+    // compileOnly  project(':zhugeioanalytics')
+    compileOnly "com.ZhugeioAnalytic:zhugeio:latest.integration"
+
 }

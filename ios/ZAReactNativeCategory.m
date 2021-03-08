@@ -2,7 +2,7 @@
 //  UIView+ZAReactNative.m
 //  react-native-plugin-zhugeio
 //
-//  Created by Good_Morning_ on 2021/1/8.
+//  Created by Zhugeio on 2021/1/8.
 //
 
 #import "ZAReactNativeCategory.h"

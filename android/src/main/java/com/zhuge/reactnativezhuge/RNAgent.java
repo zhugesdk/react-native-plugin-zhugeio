@@ -2,11 +2,14 @@ package com.zhuge.reactnativezhuge;
 
 import android.text.TextUtils;
 import android.util.SparseArray;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.uimanager.JSTouchDispatcher;
+import com.facebook.react.uimanager.events.EventDispatcher;
 import com.zhuge.analysis.deepshare.utils.Log;
 import com.zhuge.analysis.stat.ZhugeSDK;
 import com.zhuge.analysis.util.AutoConstants;
@@ -27,6 +30,9 @@ public class RNAgent {
     private static final String KEY_URL = "$url";
     private static final String KEY_EID = "$eid";
 
+    public static void handleTouchEvent(
+        JSTouchDispatcher jsTouchDispatcher, MotionEvent event, EventDispatcher eventDispatcher) { 
+    }
 
     public static void trackViewScreen(String url, JSONObject properties,boolean isAuto){
         try{

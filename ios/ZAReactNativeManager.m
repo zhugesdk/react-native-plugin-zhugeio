@@ -177,7 +177,9 @@ NSString *const kZAEventElementContentProperty = @"$element_content";
         [properties addEntriesFromDictionary:self.screenProperties];
         [properties addEntriesFromDictionary:viewProperties.properties];
         [properties setObject:@"RNView" forKey:@"$element_type"];
-        [properties setObject:isNil(properties[@"$screen_name"]) forKey:@"$url"];
+        if (properties[@"$screen_name"] != nil) {
+            [properties setObject:properties[@"$screen_name"] forKey:@"$url"];
+        }
         [properties setObject:@"click" forKey:@"$eid"];
         [[Zhuge sharedInstance] autoTrack:[properties copy]];
     });

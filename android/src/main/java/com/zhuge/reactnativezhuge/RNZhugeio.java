@@ -29,7 +29,11 @@ public class RNZhugeio extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void init(String appkey, String channel) {
-        ZhugeSDK.getInstance().init(getReactApplicationContext(), appkey, channel);
+        ZhugeParam param = new ZhugeParam.Builder()
+        .appKey(appkey)
+        .appChannel(channel)
+        .build();
+        ZhugeSDK.getInstance().initWithParam(getReactApplicationContext(),param);
     }
 
     @ReactMethod

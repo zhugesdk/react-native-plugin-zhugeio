@@ -16,11 +16,11 @@ RCT_EXPORT_METHOD(openDebug){
 }
 
 RCT_EXPORT_METHOD(openLog){
-    //ignore, ios not provide
+    [Zhuge sharedInstance].config.enableLoger = YES;
 }
 
 RCT_EXPORT_METHOD(init:(NSString *)appKey channel:(NSString *)channel){
-  //ignore,ios SDK can't init in here.
+  [[Zhuge sharedInstance] startWithAppKey:appKey launchOptions:nil];
 }
 
 RCT_EXPORT_METHOD(setUploadURL:(NSString *)url backupURL:(NSString *)backup){

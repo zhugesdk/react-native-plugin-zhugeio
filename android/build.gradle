@@ -25,5 +25,5 @@ repositories {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.zhuge.analysis:zhugeioanalytics:v3.4.21'
+    implementation "com.ZhugeioAnalytic:zhugeio:latest.integration"
 }

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "react-native-plugin-zhugeio"
-  s.version      = "1.2.2"
+  s.version      = "1.3.1"
   s.summary      = "React Native modules of zhugeio using Zhugeio pod."
 
   s.homepage     = "https://github.com/zhugesdk/react-native-plugin-zhugeio"

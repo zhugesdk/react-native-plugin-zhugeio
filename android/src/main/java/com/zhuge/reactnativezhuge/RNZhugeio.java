@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.zhuge.analysis.stat.ZhugeSDK;
+import com.zhuge.analysis.stat.ZhugeParam;
 
 import org.json.JSONObject;
 

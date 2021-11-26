@@ -1,5 +1,10 @@
 #import "RNZhugeio.h"
+
+#if __has_include("Zhuge.h")
+#import "Zhuge.h"
+#else
 #import <ZhugeioAnalytics/Zhuge.h>
+#endif
 
 @implementation RNZhugeio
 
@@ -11,11 +16,11 @@ RCT_EXPORT_METHOD(openDebug){
 }
 
 RCT_EXPORT_METHOD(openLog){
-    //ignore, ios not provide
+    [Zhuge sharedInstance].config.enableLoger = YES;
 }
 
 RCT_EXPORT_METHOD(init:(NSString *)appKey channel:(NSString *)channel){
-  //ignore,ios SDK can't init in here.
+  [[Zhuge sharedInstance] startWithAppKey:appKey launchOptions:nil];
 }
 
 RCT_EXPORT_METHOD(setUploadURL:(NSString *)url backupURL:(NSString *)backup){
@@ -44,7 +49,7 @@ RCT_EXPORT_METHOD(track:(NSString *)name properties:(NSDictionary *)pro)
 RCT_EXPORT_METHOD(setUtm:(NSDictionary *)utm){
     Zhuge *zhuge = [Zhuge sharedInstance];
     NSLog(@"setUtm with %@",utm);
-    [zhuge setUtm:utm];
+//    [zhuge setUtm:utm];
 }
 
 RCT_EXPORT_METHOD(startTrack:(NSString *)name){

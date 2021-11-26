@@ -12,15 +12,16 @@ import java.util.List;
 
 public class RNZhugeioPackage implements ReactPackage {
 
-    public static final String VERSION = "1.1.8";
+    public static final String VERSION = "1.3.2";
 
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
 
-        List<NativeModule> modules = new ArrayList<>();
+        List<NativeModule> modules = new ArrayList<>(2);
     
         modules.add(new RNZhugeio(reactContext));
+        modules.add(new RNZhugeioModule(reactContext));
         return modules;
     }
 

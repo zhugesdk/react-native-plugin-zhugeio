@@ -6,3 +6,9 @@ android/gradlew.bat
 android/local.properties
 demo
 .DS_Store
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/react-native-plugin-zhugeio.iml
+.idea/vcs.xml
+.idea/codeStyles/Project.xml

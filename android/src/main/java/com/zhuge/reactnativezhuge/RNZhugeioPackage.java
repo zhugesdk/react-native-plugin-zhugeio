@@ -12,7 +12,7 @@ import java.util.List;
 
 public class RNZhugeioPackage implements ReactPackage {
 
-    public static final String VERSION = "2.0.2";
+    public static final String VERSION = "2.0.3";
 
 
     @Override

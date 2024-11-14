@@ -20,10 +20,11 @@ android {
 }
 
 repositories {
-    jcenter()
+    google()
+    maven()
 }
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    api "io.github.zhugefe:zhugeio-analytics:latest.integration"
+    api "io.github.zhugefe:zhugeio-analytics:3.7.1"
 }

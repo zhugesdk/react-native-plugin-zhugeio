@@ -21,7 +21,6 @@ android {
 
 repositories {
     google()
-    maven()
 }
 
 dependencies {
